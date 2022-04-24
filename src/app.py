@@ -17,6 +17,8 @@ from api.commands import setup_commands
 ENV = os.getenv("FLASK_ENV")
 static_file_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../public/')
 app = Flask(__name__)
+app.config['BASIC_AUTH_USERNAME'] = os.getenv('AUTH_USERNAME')
+app.config['BASIC_AUTH_PASSWORD'] = os.getenv('AUTH_PASSWORD')
 app.url_map.strict_slashes = False
 
 # database condiguration

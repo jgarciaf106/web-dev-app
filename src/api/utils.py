@@ -30,10 +30,10 @@ def generate_sitemap(app):
             if "/admin/" not in url:
                 links.append(url)
 
-    links_html = "".join(["<li><a href='" + y + "'>" + y + "</a></li>" for y in links])
+    links_html = "".join(["<li><a href='" + y + "'>" + y + "</a></li>" for y in reversed(links)])
     return """
         <div style="text-align: center;">
-        <h1>Rigo welcomes you to your API!!</h1>
+        <h1>API Index!!</h1>
         <p>API HOST: <script>document.write('<input style="padding: 5px; width: 300px" type="text" value="'+window.location.href+'" />');</script></p>
         <p>API endpoints: </p>
         <ul style="text-align: left;">"""+links_html+"</ul></div>"
