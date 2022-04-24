@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../../styles/c_footer.scss";
 
 export const Footer = () => (
 	<footer className="footer mt-auto py-3 text-center">

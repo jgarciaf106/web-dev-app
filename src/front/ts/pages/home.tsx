@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import "../../styles/home.css";
+import "../../styles/P_home.scss";
 import reactTsImg from "../../img/react-ts.png";
 
 export const Home = () => {
