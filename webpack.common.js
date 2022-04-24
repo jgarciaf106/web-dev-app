@@ -5,8 +5,9 @@ const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: [
-    './src/front/js/index.js'
+    './src/front/ts/index.tsx'
   ],
+  devtool: 'inline-source-map',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public'),
@@ -15,9 +16,9 @@ module.exports = {
   module: {
     rules: [
         {
-          test: /\.(js|jsx)$/,
+          test: /\.(ts|tsx)$/,
           exclude: /node_modules/,
-          use: ['babel-loader']
+          use: 'ts-loader'
         },
         {
           test: /\.(css|scss)$/, use: [{
@@ -36,11 +37,11 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['*', '.js']
+    extensions: ['*', '.tsx', '.ts', '.js']
   },
   plugins: [
     new HtmlWebpackPlugin({
-        favicon: '4geeks.ico',
+        favicon: 'react-ts.ico',
         template: 'template.html'
     }),
     new Dotenv({ safe: true, systemvars: true })
